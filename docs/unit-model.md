@@ -44,31 +44,51 @@ Region code, B0 low nibble (b3 b2 b1 b0, where b0 is TPMS):
 
 | Car / market | Displayed unit | 720-01-01 | Region | B3 (b7b6) | Notes / source |
 |---|---|---|---|---|---|
-| JDM ND Roadster 2020 | km/L | `6000 22E6 8011` | 000 JPN | E6 (11) | factory; drive2.ru (kirixon) |
+| JDM ND Roadster 2020 | km/L | `6000 22E6 8011` | 000 JPN | E6 (11) | factory; [S1] |
 | same, region set to EU | still km/L (mpg only when CMU language = English) | `6200 22E6 8013` | 001 EU | E6 (11) | region alone does not change the unit |
-| same, EU + b6 = 0 | L/100km | `6200 22A6 80D3` | 001 EU | A6 (10) | photo in the same thread |
-| JDM ND RF (NDERC) | km/L | `6001 72E6 8062` | 000 | E6 (11) | factory; fnoji.com |
-| JDM ND 990S | km/L restored in EU region by setting b7b6 = 11 | (no hex) | 001 EU | 00 → 11 | minkara (berumiya); ND1/ND2 in JPN region show km/L regardless of B3 |
-| Mazda6 GJ, EU | km/L → L/100km | `A323 73E6 80C8` → `A323 73A6 8088` | 001 EU | E6 → A6 | mazda3revolution (apih) |
-| Israel CX-5 KF 2022, CMU 74.00.324 | km/L → L/100km by changing B3 only | (no hex) | ? | ? | drive2.ru; Mazda Connect generation |
-| Russia CX-5 2019/2022/2025 | km/L → L/100km | (no hex) | → 001 | b6 = 0 | forscan.org t=11329 |
-| US CX-5 2015 | mpg → L/100km | `65A0 6066 8074` → `A5A0 6006 8054` | 010 US | 66 (01) → 06 (00) | forscan.org t=17339 |
-| JDM CX-5 KF 2017 | km/L | `2023 72E6 8044` | 000 | E6 (11) | mazda3revolution |
-| JDM CX-3 | km/L | `2004 72F6 8035` | 000 | F6 (11) | mazda3revolution |
-| JDM Axela 2014 | km/L | `2000 72E6 8021` | 000 | E6 (11) | mazda3revolution |
-| Thailand Mazda3 2014 / Mazda2 2015 (×2) | L/100km | `2A06 6226 8061`, `2A80 7226 80EB`, `2A01 7226 806C` | 101 Asia | 26 (00) | still L/100km after region → AUS |
-| Vietnam Mazda3 2015, Philippines Mazda3 2016 | L/100km | `2A00 7226 806B` | 101 | 26 | |
-| Taiwan Mazda3 BM 2016 | L/100km | `2B00 7226 806C` | 101 | 26 (00) | Mobile01; region 101 + `26` = L/100km |
-| EU Mazda3 BM, Russia CX-5 2018, CIS CX-5 | L/100km | `A321 7B26 800E`, `2361 7B26 80CE`, `A321 7926 800C` | 001 | 26 | factory |
-| China / Asia CX-5 | L/100km | `A320 6B26 80FD`, `2C28 7226 8095` | 001 / 110 | 26 | mazda3revolution |
-| Saudi Mazda6 2022 | km/L, English cluster UI | (no hex) | 111? | ? | YouTube walk-through |
-| JDM CX-5 in NZ with English CMU firmware | cluster km/L, CMU screen L/100km | (no hex) | 000 | E6 | skykiwi forum; cluster unit is independent of CMU language |
+| same, EU + b6 = 0 | L/100km | `6200 22A6 80D3` | 001 EU | A6 (10) | photo in the same thread [S1] |
+| JDM ND RF (NDERC) | km/L | `6001 72E6 8062` | 000 | E6 (11) | factory; [S2] |
+| JDM ND 990S | km/L restored in EU region by setting b7b6 = 11 | (no hex) | 001 EU | 00 → 11 | [S3]; ND1/ND2 in JPN region show km/L regardless of B3 |
+| Mazda6 GJ, EU | km/L → L/100km | `A323 73E6 80C8` → `A323 73A6 8088` | 001 EU | E6 → A6 | [S4] (apih) |
+| Israel CX-5 KF 2022, CMU 74.00.324 | km/L → L/100km by changing B3 only | (no hex) | ? | ? | [S5]; Mazda Connect generation |
+| Russia CX-5 2019/2022/2025 | km/L → L/100km | (no hex) | → 001 | b6 = 0 | [S6] |
+| US CX-5 2015 | mpg → L/100km | `65A0 6066 8074` → `A5A0 6006 8054` | 010 US | 66 (01) → 06 (00) | [S7] |
+| JDM CX-5 KF 2017 | km/L | `2023 72E6 8044` | 000 | E6 (11) | [S8] |
+| JDM CX-3 | km/L | `2004 72F6 8035` | 000 | F6 (11) | [S9] |
+| JDM Axela 2014 | km/L | `2000 72E6 8021` | 000 | E6 (11) | [S10] |
+| Thailand Mazda3 2014 / Mazda2 2015 (×2) | L/100km | `2A06 6226 8061`, `2A80 7226 80EB`, `2A01 7226 806C` | 101 Asia | 26 (00) | still L/100km after region → AUS; [S9] |
+| Vietnam Mazda3 2015, Philippines Mazda3 2016 | L/100km | `2A00 7226 806B` | 101 | 26 | [S9] |
+| Taiwan Mazda3 BM 2016 | L/100km | `2B00 7226 806C` | 101 | 26 (00) | [S11]; region 101 + `26` = L/100km |
+| EU Mazda3 BM, Russia CX-5 2018, CIS CX-5 | L/100km | `A321 7B26 800E`, `2361 7B26 80CE`, `A321 7926 800C` | 001 | 26 | factory; [S9] |
+| China / Asia CX-5 | L/100km | `A320 6B26 80FD`, `2C28 7226 8095` | 001 / 110 | 26 | [S4] |
+| Saudi Mazda6 2022 | km/L, English cluster UI | (no hex) | 111? | ? | [S12] |
+| JDM CX-5 in NZ with English CMU firmware | cluster km/L, CMU screen L/100km | (no hex) | 000 | E6 | [S13]; cluster unit is independent of CMU language |
 | **This car: Mexico-market ND2 2019** | L/100km | `27E1 E226 80B9` | **011 Canada** | 26 (00) | factory |
 | **This car, working** | **km/L** | **`2BE1 E2E6 807D`** | **101** | **E6 (11)** | 2026-09-09 |
 
 Not found despite searching in English, Russian, Japanese, Spanish, Portuguese, Thai, Chinese,
 Arabic and Hebrew sources: a factory `720-01-01` hex from a Gulf, Israeli, Latin-American or
 South-East-Asian km/L car. Those would confirm or refine the model below.
+
+## Sources
+
+- [S1] drive2.ru, JDM ND Roadster 2020 As-Built experiments (kirixon): https://www.drive2.ru/l/689735739805552790/
+- [S2] fnoji.com, ND RF (NDERC) As-Built dump: https://fnoji.com/2021/03/mazda-roadsterrf-nderc-as-built-run/ and https://fnoji.com/2021/03/mazda-mx5-nderc-roadsterrf-asbuilt-overview/
+- [S3] minkara.carview.co.jp, ND 990S region/unit notes (berumiya): https://minkara.carview.co.jp/userid/615186/car/3285399/7444118/note.aspx
+- [S4] mazda3revolution, "Change INFO AVG km/L to L/100km" (Mazda6 GJ, apih, with sheet capture): https://www.mazda3revolution.com/threads/change-info-avg-km-l-to-l-100km.236721/
+- [S5] drive2.ru, Israeli CX-5 KF 2022 unit change (StasikIL): https://www.drive2.ru/l/692968303991209399/
+- [S6] forscan.org forum (Russian), CX-5 km/L → L/100km recipe: https://forum.forscan.org/viewtopic.php?t=11329
+- [S7] forscan.org forum, US CX-5 2015 mpg → L/100km: https://forum.forscan.org/viewtopic.php?t=17339
+- [S8] mazda3revolution, "Mazda CX5 2017 AsBuilt IC" (JDM KF dump): https://www.mazda3revolution.com/threads/mazda-cx5-2017-asbuilt-ic.251746/
+- [S9] mazda3revolution, "Change configuration / explore different functions (AsBuilt)" mega-thread, IC dumps from Thailand, Vietnam, Philippines, EU, CIS, JDM CX-3 (pages ~19, 256, 300): https://www.mazda3revolution.com/threads/change-configuration-explore-different-functions-asbuilt.169393/
+- [S10] mazda3revolution, "Mazda 2014 IC change from Japanese to English fail" (JDM Axela dump): https://www.mazda3revolution.com/threads/mazda-2014-ic-change-from-japanese-to-english-fail.251910/
+- [S11] Mobile01 (Taiwan), Mazda3 BM FORScan thread: https://www.mobile01.com/topicdetail.php?f=276&t=4888385
+- [S12] Frames from a YouTube walk-through of a Saudi-market Mazda6 2022 showing the cluster in km/L with an English UI. The exact video link was not retained; treat this row as weaker evidence.
+- [S13] skykiwi.com (NZ), JDM CX-5 with English CMU firmware: https://bbs.skykiwi.com/forum.php?mod=viewthread&tid=4047681
+- Bit labels: SergSlim, *Mazda SkyActiv OBD-II calc (FORScan)* v7.14; walkthrough video https://www.youtube.com/watch?v=N9si40XZbcg ; older IC-tab PDF attachment https://www.mazda3revolution.com/attachments/ic-pdf.277445/
+- Other threads consulted: https://www.mazda3revolution.com/threads/how-can-i-change-from-l-100km-to-km-l-for-mazda-3-skyactiv-2014.243052/ , https://www.cx30talk.com/threads/fuel-consumption-shown-as-km-l-instead-of-l-100-km.2503/ , https://miatafy.com/nd-miata/forscan/
+- Mazda manuals: JDM ND average-economy page (km/L) https://www2.mazda.co.jp/carlife/owner/manual/roadster/nd/erne/contents/03050225.html ; Mazda Connect settings (old CMU) https://owners-manual.mazda.com/gen/en/mzdconnect/gen_mzdconnect_en_v1/contents/34050700.html
+- Many of these forums block automated fetches; web.archive.org snapshots were used where the live page returned 403.
 
 ## Model that fits every row
 

@@ -105,11 +105,19 @@ gaps (factory hex from Gulf, Israeli, Latin-American or South-East-Asian km/L ca
 
 ## Credits and sources
 
-- SergSlim, *Mazda SkyActiv OBD-II calc (FORScan)* spreadsheet (v7.14 used here). Not redistributed;
-  see the mazda3revolution As-Built thread for the current link.
-- Owner reports on mazda3revolution.com, forscan.org (Russian section), drive2.ru, minkara.carview.co.jp,
-  Mobile01 and others, listed per row in `docs/unit-model.md`.
-- Hostile reviews of the plan were run with several LLMs before writing; their objections shaped `docs/safety.md`.
+- SergSlim, *Mazda SkyActiv OBD-II calc (FORScan)* spreadsheet (v7.14 used here). Not redistributed here;
+  the author's walkthrough is at https://www.youtube.com/watch?v=N9si40XZbcg and an older IC-tab PDF is attached
+  in the mazda3revolution As-Built thread: https://www.mazda3revolution.com/threads/change-configuration-explore-different-functions-asbuilt.169393/
+- Owner reports the dump table is built from, each linked per row in `docs/unit-model.md` (Sources section). Main ones:
+  - mazda3revolution, Mazda6 GJ km/L ↔ L/100km: https://www.mazda3revolution.com/threads/change-info-avg-km-l-to-l-100km.236721/
+  - forscan.org (Russian section), CX-5 recipe: https://forum.forscan.org/viewtopic.php?t=11329
+  - drive2.ru, JDM ND 2020 experiments: https://www.drive2.ru/l/689735739805552790/
+  - drive2.ru, Israeli CX-5 2022: https://www.drive2.ru/l/692968303991209399/
+  - fnoji.com, ND RF dump: https://fnoji.com/2021/03/mazda-roadsterrf-nderc-as-built-run/
+  - minkara, ND 990S: https://minkara.carview.co.jp/userid/615186/car/3285399/7444118/note.aspx
+  - Mobile01, Taiwan Mazda3: https://www.mobile01.com/topicdetail.php?f=276&t=4888385
+- ND workshop-manual mirror used for the DTC analysis: https://www.mx5manual.com/ (see `docs/dtc-b1252.md`).
+- Adversarial reviews of the plan were run with several LLMs before writing; their objections shaped `docs/safety.md`.
 
 ## License
 
