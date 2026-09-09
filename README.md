@@ -77,8 +77,8 @@ Full version with rationale: `docs/safety.md`. Short version:
 | 2026-09-09 | `2BE1 E2E6 807D` (region 101 + E6) | **km/L on the cluster.** |
 
 All modules scanned clean afterwards except one pre-existing CMU code unrelated to the change
-(`docs/dtc-b1252.md`). No side effects seen so far: temperature stays in °C, English UI,
-Android Auto works. This is being watched over the following days.
+(`docs/dtc-b1252.md`). No side effects seen in the checks right after the change: temperature stays in °C, English UI,
+Android Auto works.
 
 ## Car
 
@@ -88,11 +88,11 @@ Android Auto works. This is being watched over the following days.
   its fuel-economy screen follows the cluster unit.
 - FORScan 2.3.71 with extended license, vLinker FS USB adapter.
 
-## Help extend the table
+## Status
 
-If you have a Mazda Connect-era Mazda, your factory `720-01-01`, your market and the unit you see
-are useful, especially from km/L markets (Gulf, Israel, South-East Asia, Latin America) where no
-hex dumps were found. Please open an issue using the template.
+This repository is an archived write-up of one car. It is not maintained and does not collect
+reports. The dump table in `docs/unit-model.md` is what could be found as of September 2026;
+gaps (factory hex from Gulf, Israeli, Latin-American or South-East-Asian km/L cars) remain.
 
 ## Repository layout
 
